@@ -1,0 +1,16 @@
+{
+  "name": "pm2-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemailer": "^6.7.8",
+    "pm2": "^5.2.0",
+    "yaml": "^2.1.1"
+  }
+}
