@@ -95,8 +95,11 @@ pm2.launchBus(function (err, pm2_bus) {
         console.log('process:msg', msg)
     })
     pm2_bus.on('process:event', async function (event) {
-        console.log('process:event', event.event)
         let name = event.process.name
+        console.log('process:event', event, event.event, name)
+        if (event.manually) {
+            return;
+        }
         let count = event.process.restart_time;
         let cwd = event.process.pm_exec_path;
         let username = event.process.username
@@ -126,8 +129,8 @@ pm2.launchBus(function (err, pm2_bus) {
         }
     })
     pm2_bus.on('process:exception', function (exception) {
-        console.log('process:exception', exception)
         let name = exception.process.name;
+        console.log('process:exception', exception, name)
         let data = exception.data;
         worker.exec(async () => {
             return sendMails(name, `${namespace}-${name}-panic`, `

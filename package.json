@@ -1,6 +1,6 @@
 {
-  "name": "dadigua-pm2-emial",
-  "version": "1.0.0",
+  "name": "dadigua-pm2-email",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
