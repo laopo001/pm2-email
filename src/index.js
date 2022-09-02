@@ -66,6 +66,7 @@ async function sendEmail(to, subject, text) {
 }
 
 async function sendMails(name, subject, text) {
+    console.log(subject)
     config.pickSubscribeEmal = config.pickSubscribeEmal || [];
     let map = {}
     let process = config.pickSubscribeEmal.find(x => x.name == name);
@@ -96,8 +97,8 @@ pm2.launchBus(function (err, pm2_bus) {
     })
     pm2_bus.on('process:event', async function (event) {
         let name = event.process.name
-        console.log('process:event', event, event.event, name)
-        if (event.manually) {
+        console.log('process:event', event.process.status, event.manually, name)
+        if (event.manually && event.process.status == 'stopping') {
             return;
         }
         let count = event.process.restart_time;
@@ -105,11 +106,9 @@ pm2.launchBus(function (err, pm2_bus) {
         let username = event.process.username
         let title = ""
         if (event.event == 'exit') {
-            console.log(1);
             title = `${namespace}-${name}-exit`
         }
         if (event.event == 'online') {
-            console.log(2);
             title = `${namespace}-${name}-online`
         }
         if (event.event == 'restart overlimit') {
