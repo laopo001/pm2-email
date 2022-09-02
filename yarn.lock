@@ -277,6 +277,11 @@ commander@2.15.1:
   resolved "http://registry.m.jd.com/commander/download/commander-2.15.1.tgz#df46e867d0fc2aec66a34662b406a9ccafff5b0f"
   integrity sha1-30boZ9D8Kuxmo0ZitAapzK//Ww8=
 
+commander@^9.4.0:
+  version "9.4.0"
+  resolved "http://registry.m.jd.com/commander/download/commander-9.4.0.tgz#bc4a40918fefe52e22450c111ecd6b7acce6f11c"
+  integrity sha1-vEpAkY/v5S4iRQwRHs1reszm8Rw=
+
 concat-map@0.0.1:
   version "0.0.1"
   resolved "http://registry.m.jd.com/concat-map/download/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"

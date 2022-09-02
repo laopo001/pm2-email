@@ -1,14 +1,18 @@
 {
-  "name": "pm2-manager",
+  "name": "dadigua-pm2-emial",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "pm2-email": "cli.js"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "commander": "^9.4.0",
     "nodemailer": "^6.7.8",
     "pm2": "^5.2.0",
     "yaml": "^2.1.1"
